@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary - Our Love Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Moving Tulips Background */
+        .tulips-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .tulip {
+            position: absolute;
+            width: 30px;
+            height: 40px;
+            background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: floatTulip 15s infinite linear;
+            opacity: 0.7;
+        }
+
+        .tulip::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 20px;
+            background: #4a7c59;
+            border-radius: 2px;
+        }
+
+        .tulip::after {
+            content: '';
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: #4a7c59;
+            border-radius: 50%;
+        }
+
+        @keyframes floatTulip {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .main-content {
+            padding: 60px 40px;
+        }
+
+        .anniversary-message {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .anniversary-message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #ee5a24, #ff6b6b);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .message-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .message-highlight {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #ff6b6b;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        .photos-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            margin: 30px 0;
+        }
+
+        .photos-section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .folder-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .folder-tab {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: 500;
+            color: white;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .folder-tab:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .folder-tab:active {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(0.98);
+        }
+
+        .folder-tab.active {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .photo-item {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .photo-item:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .photo-item:active {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(0.98);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .photo-item video {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .photo-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-align: center;
+        }
+
+        .folder-content {
+            display: none;
+        }
+
+        .folder-content.active {
+            display: block;
+        }
+
+        /* Lightbox Modal Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(2px);
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 60%;
+            max-height: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .lightbox-media {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(102, 126, 234, 0.8);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(102, 126, 234, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .lightbox-prev {
+            left: -30px;
+        }
+
+        .lightbox-next {
+            right: -30px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: rgba(255, 107, 107, 0.9);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 107, 107, 1);
+            transform: scale(1.1);
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(102, 126, 234, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-content {
+                max-width: 80%;
+                max-height: 60%;
+                padding: 15px;
+            }
+
+            .lightbox-nav {
+                font-size: 1.5rem;
+                padding: 10px 15px;
+            }
+
+            .lightbox-prev {
+                left: -25px;
+            }
+
+            .lightbox-next {
+                right: -25px;
+            }
+
+            .lightbox-close {
+                top: -12px;
+                right: -12px;
+                font-size: 1.3rem;
+                padding: 6px 10px;
+            }
+
+            .lightbox-counter {
+                bottom: -12px;
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .lightbox-content {
+                max-width: 90%;
+                max-height: 50%;
+                padding: 10px;
+            }
+
+            .lightbox-nav {
+                font-size: 1.2rem;
+                padding: 8px 12px;
+            }
+
+            .lightbox-prev {
+                left: -20px;
+            }
+
+            .lightbox-next {
+                right: -20px;
+            }
+
+            .lightbox-close {
+                top: -10px;
+                right: -10px;
+                font-size: 1.1rem;
+                padding: 5px 8px;
+            }
+        }
+
+        .anniversary-counter {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .counter-text {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .counter-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #fff;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .footer p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .heart {
+            color: #ff6b6b;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .main-content {
+                padding: 40px 20px;
+            }
+            
+            .anniversary-message {
+                padding: 30px 20px;
+            }
+            
+            .message-text {
+                font-size: 1.1rem;
+            }
+            
+            .message-highlight {
+                font-size: 1.5rem;
+            }
+
+            .folder-tabs {
+                flex-direction: column;
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+
+            .folder-tab {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .photo-item {
+                padding: 12px;
+            }
+
+            .photo-item img,
+            .photo-item video {
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                border-radius: 15px;
+            }
+
+            .header {
+                padding: 30px 15px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .main-content {
+                padding: 30px 15px;
+            }
+            
+            .anniversary-message {
+                padding: 25px 15px;
+            }
+            
+            .message-text {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
+            .message-highlight {
+                font-size: 1.3rem;
+            }
+            
+            .photos-section {
+                padding: 30px 15px;
+            }
+
+            .photos-section h2 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .folder-tabs {
+                gap: 6px;
+                margin-bottom: 15px;
+            }
+
+            .folder-tab {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+                border-radius: 20px;
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .photo-item {
+                padding: 10px;
+            }
+
+            .photo-item img,
+            .photo-item video {
+                height: 100px;
+            }
+
+            .photo-item p {
+                font-size: 0.8rem;
+            }
+
+            .anniversary-counter {
+                padding: 20px;
+                margin-top: 20px;
+            }
+
+            .counter-text {
+                font-size: 1.1rem;
+            }
+
+            .counter-number {
+                font-size: 2.5rem;
+            }
+
+            .footer {
+                padding: 20px;
+            }
+
+            .footer p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .photos-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .photo-item img,
+            .photo-item video {
+                height: 150px;
+            }
+
+            .folder-tab {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Moving Tulips Background -->
+    <div class="tulips-bg">
+        <div class="tulip" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="tulip" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="tulip" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="tulip" style="left: 40%; animation-delay: 1s;"></div>
+        <div class="tulip" style="left: 50%; animation-delay: 3s;"></div>
+        <div class="tulip" style="left: 60%; animation-delay: 5s;"></div>
+        <div class="tulip" style="left: 70%; animation-delay: 2.5s;"></div>
+        <div class="tulip" style="left: 80%; animation-delay: 4.5s;"></div>
+        <div class="tulip" style="left: 90%; animation-delay: 1.5s;"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1>Happy Anniversary!</h1>
+            <p>Celebrating Our Love Story</p>
+        </header>
+
+        <main class="main-content">
+            <div class="anniversary-message">
+                <div class="message-text">
+                    Hello Hal, Happy Anniversary! Thank you for taking care of me, hehe. Thank you for all your sweet words to me. Thank you for always being there to lend me money when I have zero days, hehe. Thank you because you always support me. I love you.
+                </div>
+                
+                <div class="message-highlight">
+                    "So it's been 1 year of us fighting and loving each other, yeah!"
+                </div>
+                
+                <div class="message-text">
+                    Thank you because I'm now legal in your family, my love. Even though we can't celebrate our anniversary properly today because you're busy, hehe, I know Hal that you can do what you're doing for our future. Always thank God for helping us overcome the challenges in our life together.
+                </div>
+                
+                <div class="message-text">
+                    My love, always take a rest, okay? I'm here to support you. I will never leave your side, my love. Let's overcome our challenges together. And my love, I love you always, my love. Muah! Thank you for this 1 year and for the years to come, hehe. I love you, my love.
+                </div>
+            </div>
+
+            <div class="photos-section">
+                <h2>Our Beautiful Memories</h2>
+                
+                <div class="folder-tabs">
+                    <div class="folder-tab active" onclick="showFolder('video')">Video</div>
+                    <div class="folder-tab" onclick="showFolder('couple')">Couple</div>
+                    <div class="folder-tab" onclick="showFolder('epicshot')">Epic Shot</div>
+                    <div class="folder-tab" onclick="showFolder('solo')">Solo</div>
+                    <div class="folder-tab" onclick="showFolder('bebetime')">Bebe Time</div>
+                    <div class="folder-tab" onclick="showFolder('paldodays')">Paldo Days</div>
+                </div>
+
+                <!-- Video Folder -->
+                <div id="video" class="folder-content active">
+                    <div class="photo-grid">
+                        <div class="photo-item">
+                            <video controls>
+                                <source src="video/7eda172e-5f11-4901-945b-a22c55c5a050.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p>Our Special Video</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Couple Folder -->
+                <div id="couple" class="folder-content">
+                    <div class="photo-grid">
+                        <div class="photo-item">
+                            <img src="images/couple/2e5eab77-c95a-479b-911e-7dd7633ea0df.jpg" alt="Couple Photo 1">
+                            <p>Couple Moment 1</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/couple/2e8b5107-74e2-42df-9bfc-45b77fe27736.jpg" alt="Couple Photo 2">
+                            <p>Couple Moment 2</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/couple/5bd5cd86-e797-4375-a5cc-298307893a6e.jpg" alt="Couple Photo 3">
+                            <p>Couple Moment 3</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/couple/5ee40c37-fcef-440c-a3b4-b891d0efc63f.jpg" alt="Couple Photo 4">
+                            <p>Couple Moment 4</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/couple/6e2a7ae5-8c36-4c9e-a0bf-875144d0b111.jpg" alt="Couple Photo 5">
+                            <p>Couple Moment 5</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/couple/6f217882-65d0-4f4e-8926-56b5414376eb.jpg" alt="Couple Photo 6">
+                            <p>Couple Moment 6</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/couple/8f4d0c34-f091-4c1d-ae60-4efaf45037a9.jpg" alt="Couple Photo 7">
+                            <p>Couple Moment 7</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/couple/a1a09c99-e90e-4907-b692-a5520aaad291.jpg" alt="Couple Photo 8">
+                            <p>Couple Moment 8</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/couple/ec879666-143e-4995-a51f-70b729ec3616.jpg" alt="Couple Photo 9">
+                            <p>Couple Moment 9</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Epic Shot Folder -->
+                <div id="epicshot" class="folder-content">
+                    <div class="photo-grid">
+                        <div class="photo-item">
+                            <img src="images/EpicShot/0ee6272e-48ae-4101-b4ae-8be21e0a8c04.jpg" alt="Epic Shot 1">
+                            <p>Epic Shot 1</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/EpicShot/28127a49-c6a0-4a9f-aa21-b12347a2a1ad.jpg" alt="Epic Shot 2">
+                            <p>Epic Shot 2</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/EpicShot/3c7b2077-f909-470b-8d17-bfe941acc7f1.jpg" alt="Epic Shot 3">
+                            <p>Epic Shot 3</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/EpicShot/501e063c-3eef-4fda-8315-2b19b9445192.jpg" alt="Epic Shot 4">
+                            <p>Epic Shot 4</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/EpicShot/50cf6b0e-2365-4391-9b51-bfdd8ed86791.jpg" alt="Epic Shot 5">
+                            <p>Epic Shot 5</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/EpicShot/51f034da-1bd4-4667-a741-053da6218f0a.jpg" alt="Epic Shot 6">
+                            <p>Epic Shot 6</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/EpicShot/7ac6d2f7-790d-4461-b00a-6254b7a5cc4b.jpg" alt="Epic Shot 7">
+                            <p>Epic Shot 7</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/EpicShot/a24f47ba-3ac3-48d1-8910-58ef3d97567b.jpg" alt="Epic Shot 8">
+                            <p>Epic Shot 8</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/EpicShot/a5b1fa7b-0113-4f45-8a9e-9f0eaf6fb0c7.jpg" alt="Epic Shot 9">
+                            <p>Epic Shot 9</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/EpicShot/c06c60d3-c369-49ee-895c-94cb029bddde.jpg" alt="Epic Shot 10">
+                            <p>Epic Shot 10</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/EpicShot/c981f84d-31dc-480f-ab55-456c296d23db.jpg" alt="Epic Shot 11">
+                            <p>Epic Shot 11</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/EpicShot/da8536fa-a632-4339-aea2-c2f61405c510.jpg" alt="Epic Shot 12">
+                            <p>Epic Shot 12</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/EpicShot/f7f2bbbf-cacc-4689-a199-6fcece346b10.jpg" alt="Epic Shot 13">
+                            <p>Epic Shot 13</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/EpicShot/f907b08e-f87a-48c8-8fe2-a1411af52b47.jpg" alt="Epic Shot 14">
+                            <p>Epic Shot 14</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solo Folder -->
+                <div id="solo" class="folder-content">
+                    <div class="photo-grid">
+                        <div class="photo-item">
+                            <img src="images/solo/0220c18b-c3ed-4d77-be54-a894aa9b9afa.jpg" alt="Solo Photo 1">
+                            <p>Solo Moment 1</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/solo/0e232763-9b99-4b5c-8e77-88ff008c1408.jpg" alt="Solo Photo 2">
+                            <p>Solo Moment 2</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/solo/227f7d3a-afff-4776-afb5-2a2b5807c981.jpg" alt="Solo Photo 3">
+                            <p>Solo Moment 3</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/solo/2e41ad83-f323-48e4-9a2a-a90048706434.jpg" alt="Solo Photo 4">
+                            <p>Solo Moment 4</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/solo/8c8925a8-1d02-4279-bc2b-5ff03ab96fa3.jpg" alt="Solo Photo 5">
+                            <p>Solo Moment 5</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/solo/8f6cfd01-e1fb-45b9-b1bb-d4946ba2160e.jpg" alt="Solo Photo 6">
+                            <p>Solo Moment 6</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/solo/ab17d43f-38da-466d-a86e-d0cf3109c101.jpg" alt="Solo Photo 7">
+                            <p>Solo Moment 7</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/solo/b41a2d34-508b-40d4-9c97-5d1b228192de.jpg" alt="Solo Photo 8">
+                            <p>Solo Moment 8</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/solo/deffa959-6e32-429a-9c94-9f1fcbc20a1c.jpg" alt="Solo Photo 9">
+                            <p>Solo Moment 9</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/solo/f72b664e-3007-4762-972f-9c1db1be97f4.jpg" alt="Solo Photo 10">
+                            <p>Solo Moment 10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bebe Time Folder -->
+                <div id="bebetime" class="folder-content">
+                    <div class="photo-grid">
+                        <div class="photo-item">
+                            <img src="images/bebetime/cf9d1ab3-3f2e-4d8a-9681-0e1e055eb9ef.jpg" alt="Bebe Time 1">
+                            <p>Bebe Time 1</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/bebetime/d51ea9a7-9a08-4dc0-baed-2cf71274018c.jpg" alt="Bebe Time 2">
+                            <p>Bebe Time 2</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paldo Days Folder -->
+                <div id="paldodays" class="folder-content">
+                    <div class="photo-grid">
+                        <div class="photo-item">
+                            <img src="images/PaldoDays/41be27b7-1675-43e7-89b9-1a9b6a7f0e14.jpg" alt="Paldo Days 1">
+                            <p>Paldo Days 1</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/PaldoDays/7c862a2e-9ebc-460c-8bee-11a6bb0d6fef.jpg" alt="Paldo Days 2">
+                            <p>Paldo Days 2</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/PaldoDays/ac618147-964a-4816-b6bc-bd20fb95bbfb.jpg" alt="Paldo Days 3">
+                            <p>Paldo Days 3</p>
+                        </div>
+                        <div class="photo-item">
+                            <img src="images/PaldoDays/dcb16f75-8ea5-42bb-925c-6872efe240a5.jpg" alt="Paldo Days 4">
+                            <p>Paldo Days 4</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="anniversary-counter">
+                    <div class="counter-text">Years of Love & Happiness</div>
+                    <div class="counter-number">1+</div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Made with <span class="heart">♥</span> for my beloved Hal</p>
+        </footer>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-nav lightbox-prev" onclick="previousMedia()">‹</button>
+            <button class="lightbox-nav lightbox-next" onclick="nextMedia()">›</button>
+            <div id="lightbox-media-container">
+                <!-- Media will be inserted here -->
+            </div>
+            <div class="lightbox-counter">
+                <span id="current-index">1</span> / <span id="total-count">1</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentMediaIndex = 0;
+        let currentMediaList = [];
+        let currentFolder = '';
+
+        // Define all media for each folder
+        const mediaData = {
+            video: [
+                { type: 'video', src: 'video/7eda172e-5f11-4901-945b-a22c55c5a050.mp4', alt: 'Our Special Video' }
+            ],
+            couple: [
+                { type: 'image', src: 'images/couple/2e5eab77-c95a-479b-911e-7dd7633ea0df.jpg', alt: 'Couple Photo 1' },
+                { type: 'image', src: 'images/couple/2e8b5107-74e2-42df-9bfc-45b77fe27736.jpg', alt: 'Couple Photo 2' },
+                { type: 'image', src: 'images/couple/5bd5cd86-e797-4375-a5cc-298307893a6e.jpg', alt: 'Couple Photo 3' },
+                { type: 'image', src: 'images/couple/5ee40c37-fcef-440c-a3b4-b891d0efc63f.jpg', alt: 'Couple Photo 4' },
+                { type: 'image', src: 'images/couple/6e2a7ae5-8c36-4c9e-a0bf-875144d0b111.jpg', alt: 'Couple Photo 5' },
+                { type: 'image', src: 'images/couple/6f217882-65d0-4f4e-8926-56b5414376eb.jpg', alt: 'Couple Photo 6' },
+                { type: 'image', src: 'images/couple/8f4d0c34-f091-4c1d-ae60-4efaf45037a9.jpg', alt: 'Couple Photo 7' },
+                { type: 'image', src: 'images/couple/a1a09c99-e90e-4907-b692-a5520aaad291.jpg', alt: 'Couple Photo 8' },
+                { type: 'image', src: 'images/couple/ec879666-143e-4995-a51f-70b729ec3616.jpg', alt: 'Couple Photo 9' }
+            ],
+            epicshot: [
+                { type: 'image', src: 'images/EpicShot/0ee6272e-48ae-4101-b4ae-8be21e0a8c04.jpg', alt: 'Epic Shot 1' },
+                { type: 'image', src: 'images/EpicShot/28127a49-c6a0-4a9f-aa21-b12347a2a1ad.jpg', alt: 'Epic Shot 2' },
+                { type: 'image', src: 'images/EpicShot/3c7b2077-f909-470b-8d17-bfe941acc7f1.jpg', alt: 'Epic Shot 3' },
+                { type: 'image', src: 'images/EpicShot/501e063c-3eef-4fda-8315-2b19b9445192.jpg', alt: 'Epic Shot 4' },
+                { type: 'image', src: 'images/EpicShot/50cf6b0e-2365-4391-9b51-bfdd8ed86791.jpg', alt: 'Epic Shot 5' },
+                { type: 'image', src: 'images/EpicShot/51f034da-1bd4-4667-a741-053da6218f0a.jpg', alt: 'Epic Shot 6' },
+                { type: 'image', src: 'images/EpicShot/7ac6d2f7-790d-4461-b00a-6254b7a5cc4b.jpg', alt: 'Epic Shot 7' },
+                { type: 'image', src: 'images/EpicShot/a24f47ba-3ac3-48d1-8910-58ef3d97567b.jpg', alt: 'Epic Shot 8' },
+                { type: 'image', src: 'images/EpicShot/a5b1fa7b-0113-4f45-8a9e-9f0eaf6fb0c7.jpg', alt: 'Epic Shot 9' },
+                { type: 'image', src: 'images/EpicShot/c06c60d3-c369-49ee-895c-94cb029bddde.jpg', alt: 'Epic Shot 10' },
+                { type: 'image', src: 'images/EpicShot/c981f84d-31dc-480f-ab55-456c296d23db.jpg', alt: 'Epic Shot 11' },
+                { type: 'image', src: 'images/EpicShot/da8536fa-a632-4339-aea2-c2f61405c510.jpg', alt: 'Epic Shot 12' },
+                { type: 'image', src: 'images/EpicShot/f7f2bbbf-cacc-4689-a199-6fcece346b10.jpg', alt: 'Epic Shot 13' },
+                { type: 'image', src: 'images/EpicShot/f907b08e-f87a-48c8-8fe2-a1411af52b47.jpg', alt: 'Epic Shot 14' }
+            ],
+            solo: [
+                { type: 'image', src: 'images/solo/0220c18b-c3ed-4d77-be54-a894aa9b9afa.jpg', alt: 'Solo Photo 1' },
+                { type: 'image', src: 'images/solo/0e232763-9b99-4b5c-8e77-88ff008c1408.jpg', alt: 'Solo Photo 2' },
+                { type: 'image', src: 'images/solo/227f7d3a-afff-4776-afb5-2a2b5807c981.jpg', alt: 'Solo Photo 3' },
+                { type: 'image', src: 'images/solo/2e41ad83-f323-48e4-9a2a-a90048706434.jpg', alt: 'Solo Photo 4' },
+                { type: 'image', src: 'images/solo/8c8925a8-1d02-4279-bc2b-5ff03ab96fa3.jpg', alt: 'Solo Photo 5' },
+                { type: 'image', src: 'images/solo/8f6cfd01-e1fb-45b9-b1bb-d4946ba2160e.jpg', alt: 'Solo Photo 6' },
+                { type: 'image', src: 'images/solo/ab17d43f-38da-466d-a86e-d0cf3109c101.jpg', alt: 'Solo Photo 7' },
+                { type: 'image', src: 'images/solo/b41a2d34-508b-40d4-9c97-5d1b228192de.jpg', alt: 'Solo Photo 8' },
+                { type: 'image', src: 'images/solo/deffa959-6e32-429a-9c94-9f1fcbc20a1c.jpg', alt: 'Solo Photo 9' },
+                { type: 'image', src: 'images/solo/f72b664e-3007-4762-972f-9c1db1be97f4.jpg', alt: 'Solo Photo 10' }
+            ],
+            bebetime: [
+                { type: 'image', src: 'images/bebetime/cf9d1ab3-3f2e-4d8a-9681-0e1e055eb9ef.jpg', alt: 'Bebe Time 1' },
+                { type: 'image', src: 'images/bebetime/d51ea9a7-9a08-4dc0-baed-2cf71274018c.jpg', alt: 'Bebe Time 2' }
+            ],
+            paldodays: [
+                { type: 'image', src: 'images/PaldoDays/41be27b7-1675-43e7-89b9-1a9b6a7f0e14.jpg', alt: 'Paldo Days 1' },
+                { type: 'image', src: 'images/PaldoDays/7c862a2e-9ebc-460c-8bee-11a6bb0d6fef.jpg', alt: 'Paldo Days 2' },
+                { type: 'image', src: 'images/PaldoDays/ac618147-964a-4816-b6bc-bd20fb95bbfb.jpg', alt: 'Paldo Days 3' },
+                { type: 'image', src: 'images/PaldoDays/dcb16f75-8ea5-42bb-925c-6872efe240a5.jpg', alt: 'Paldo Days 4' }
+            ]
+        };
+
+        function showFolder(folderId) {
+            // Hide all folder contents
+            const allContents = document.querySelectorAll('.folder-content');
+            allContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            const allTabs = document.querySelectorAll('.folder-tab');
+            allTabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected folder content
+            const selectedContent = document.getElementById(folderId);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
+
+            // Add active class to clicked tab
+            const clickedTab = event.target;
+            clickedTab.classList.add('active');
+
+            // Set current folder for lightbox
+            currentFolder = folderId;
+        }
+
+        function openLightbox(mediaIndex, folderId) {
+            currentMediaList = mediaData[folderId] || [];
+            currentMediaIndex = mediaIndex;
+            currentFolder = folderId;
+            
+            if (currentMediaList.length === 0) return;
+            
+            showMedia(currentMediaIndex);
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+            
+            // Pause any playing videos
+            const videos = document.querySelectorAll('#lightbox-media-container video');
+            videos.forEach(video => video.pause());
+        }
+
+        function showMedia(index) {
+            if (currentMediaList.length === 0) return;
+            
+            const media = currentMediaList[index];
+            const container = document.getElementById('lightbox-media-container');
+            
+            let mediaElement;
+            if (media.type === 'video') {
+                mediaElement = document.createElement('video');
+                mediaElement.src = media.src;
+                mediaElement.controls = true;
+                mediaElement.autoplay = true;
+            } else {
+                mediaElement = document.createElement('img');
+                mediaElement.src = media.src;
+                mediaElement.alt = media.alt;
+            }
+            
+            mediaElement.className = 'lightbox-media';
+            container.innerHTML = '';
+            container.appendChild(mediaElement);
+            
+            // Update counter
+            document.getElementById('current-index').textContent = index + 1;
+            document.getElementById('total-count').textContent = currentMediaList.length;
+        }
+
+        function nextMedia() {
+            if (currentMediaList.length === 0) return;
+            currentMediaIndex = (currentMediaIndex + 1) % currentMediaList.length;
+            showMedia(currentMediaIndex);
+        }
+
+        function previousMedia() {
+            if (currentMediaList.length === 0) return;
+            currentMediaIndex = (currentMediaIndex - 1 + currentMediaList.length) % currentMediaList.length;
+            showMedia(currentMediaIndex);
+        }
+
+        // Add click handlers to all media items
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers to all images and videos
+            document.querySelectorAll('.photo-item img, .photo-item video').forEach((media, index) => {
+                media.addEventListener('click', function() {
+                    const folderId = this.closest('.folder-content').id;
+                    const folderMedia = mediaData[folderId] || [];
+                    const mediaIndex = Array.from(this.closest('.photo-grid').children).indexOf(this.closest('.photo-item'));
+                    openLightbox(mediaIndex, folderId);
+                });
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                const lightbox = document.getElementById('lightbox');
+                if (lightbox.classList.contains('active')) {
+                    switch(e.key) {
+                        case 'Escape':
+                            closeLightbox();
+                            break;
+                        case 'ArrowLeft':
+                            previousMedia();
+                            break;
+                        case 'ArrowRight':
+                            nextMedia();
+                            break;
+                    }
+                }
+            });
+
+            // Touch/swipe support for mobile
+            let startX = 0;
+            let startY = 0;
+            
+            document.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+            });
+            
+            document.addEventListener('touchend', function(e) {
+                const lightbox = document.getElementById('lightbox');
+                if (!lightbox.classList.contains('active')) return;
+                
+                const endX = e.changedTouches[0].clientX;
+                const endY = e.changedTouches[0].clientY;
+                const diffX = startX - endX;
+                const diffY = startY - endY;
+                
+                // Only trigger swipe if horizontal movement is greater than vertical
+                if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                    if (diffX > 0) {
+                        nextMedia(); // Swipe left - next
+                    } else {
+                        previousMedia(); // Swipe right - previous
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
