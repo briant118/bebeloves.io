@@ -300,6 +300,272 @@
             display: block;
         }
 
+        /* Digital Flower Bouquet */
+        .bouquet-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            min-height: 200px;
+            overflow: visible;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .bouquet-wrapper .bouquet {
+            flex-shrink: 0;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        .bouquet {
+            position: relative;
+            width: 120px;
+            height: 140px;
+            animation: floatBouquet 3s ease-in-out infinite;
+        }
+
+        .bouquet-wrapper:hover .bouquet {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @keyframes floatBouquet {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(2deg);
+            }
+        }
+
+        .stem {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 6px;
+            height: 80px;
+            background: #3c8c5a;
+            border-radius: 3px;
+            transform: translateX(-50%);
+        }
+
+        .stem.stem-left {
+            transform: translateX(-50%) rotate(-10deg);
+        }
+
+        .stem.stem-right {
+            transform: translateX(-50%) rotate(10deg);
+        }
+
+        .tulip-head, .rose-head {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50% 50% 40% 40%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: bloomFlower 2s ease-in-out infinite;
+        }
+
+        .tulip-head {
+            background: linear-gradient(135deg, #ff6b9d, #ff9fbf);
+            animation-delay: 0s;
+        }
+
+        .rose-head {
+            background: radial-gradient(circle at 30% 30%, #ffd1e3 0%, #ff3b6b 40%, #c0123d 100%);
+            animation-delay: 0.5s;
+        }
+
+        @keyframes bloomFlower {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(1.1) rotate(5deg);
+            }
+        }
+
+        .tulip-head::before,
+        .tulip-head::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 50%;
+            height: 60%;
+            background: inherit;
+            border-radius: 50%;
+        }
+
+        .tulip-head::before {
+            left: -10%;
+        }
+
+        .tulip-head::after {
+            right: -10%;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 26px;
+            height: 40px;
+            background: #4fa66a;
+            border-radius: 0 100% 0 100%;
+            transform-origin: bottom left;
+            animation: swayLeaf 2s ease-in-out infinite;
+        }
+
+        .leaf.leaf-left {
+            left: 35%;
+            bottom: 40px;
+            animation-delay: 0s;
+        }
+
+        .leaf.leaf-right {
+            right: 35%;
+            bottom: 35px;
+            animation-delay: 1s;
+        }
+
+        @keyframes swayLeaf {
+            0%, 100% {
+                transform: rotate(-35deg);
+            }
+            50% {
+                transform: rotate(-25deg);
+            }
+        }
+
+        .leaf.leaf-right {
+            animation-name: swayLeafRight;
+        }
+
+        @keyframes swayLeafRight {
+            0%, 100% {
+                transform: rotate(35deg) scaleX(-1);
+            }
+            50% {
+                transform: rotate(45deg) scaleX(-1);
+            }
+        }
+
+        .bouquet-wrap {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 35px;
+            background: linear-gradient(135deg, #ffd3a5, #fd6585);
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+        }
+
+        .bouquet-wrap::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 16px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 999px;
+        }
+
+        /* Hover love note */
+        .love-note {
+            max-width: 90vw;
+            width: 90vw;
+            max-height: 70vh;
+            padding: 24px 28px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.96);
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            text-align: center;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+            border: 1px solid rgba(255, 107, 150, 0.4);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateY(8px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+            z-index: 10;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        .love-note::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 18px;
+            background: inherit;
+            border-left: 1px solid rgba(255, 107, 150, 0.4);
+            border-top: 1px solid rgba(255, 107, 150, 0.4);
+            transform-origin: center;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        .bouquet-wrapper:hover .love-note {
+            opacity: 1;
+            transform: translate(-50%, -50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .love-note::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .love-note::-webkit-scrollbar-track {
+            background: rgba(255, 107, 150, 0.1);
+            border-radius: 10px;
+        }
+
+        .love-note::-webkit-scrollbar-thumb {
+            background: rgba(255, 107, 150, 0.4);
+            border-radius: 10px;
+        }
+
+        .love-note::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 107, 150, 0.6);
+        }
+
+        #valentines .photo-grid {
+            grid-template-columns: 1fr !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        #valentines .photo-item {
+            max-width: none !important;
+            width: 100% !important;
+            padding: 0 !important;
+            background: transparent !important;
+            border: none !important;
+        }
+
+        #valentines .bouquet-wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        @media (max-width: 768px) {
+            .love-note {
+                max-width: 95vw;
+                width: 95vw;
+                padding: 20px 24px;
+            }
+        }
+
         /* Lightbox Modal Styles */
         .lightbox {
             display: none;
@@ -724,6 +990,7 @@
                     <div class="folder-tab" onclick="showFolder('solo')">Solo</div>
                     <div class="folder-tab" onclick="showFolder('bebetime')">Bebe Time</div>
                     <div class="folder-tab" onclick="showFolder('paldodays')">Paldo Days</div>
+                    <div class="folder-tab" onclick="showFolder('valentines')">Valentines</div>
                 </div>
 
                 <!-- Video Folder -->
@@ -1005,6 +1272,48 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Valentines Folder -->
+                <div id="valentines" class="folder-content">
+                    <div class="photo-grid">
+                        <div class="photo-item" style="grid-column: 1 / -1; display: flex; justify-content: center;">
+                            <div class="bouquet-wrapper">
+                                <div class="bouquet">
+                                    <!-- Stems -->
+                                    <div class="stem stem-left"></div>
+                                    <div class="stem"></div>
+                                    <div class="stem stem-right"></div>
+
+                                    <!-- Tulips -->
+                                    <div class="tulip-head" style="left: 5px; top: 35px;"></div>
+                                    <div class="tulip-head" style="right: 5px; top: 40px;"></div>
+
+                                    <!-- Roses -->
+                                    <div class="rose-head" style="left: 35px; top: 10px;"></div>
+                                    <div class="rose-head" style="right: 35px; top: 5px;"></div>
+
+                                    <!-- Leaves -->
+                                    <div class="leaf leaf-left"></div>
+                                    <div class="leaf leaf-right"></div>
+
+                                    <!-- Wrap -->
+                                    <div class="bouquet-wrap"></div>
+                                </div>
+
+                                <div class="love-note">
+                                    Mahal, happy Valentine's Day, mahal ko. Thank you for everything you've done for me, mahal. Like I said earlier, I will fight for our love&mdash;ayeah, haha.<br><br>
+                                    I don't even have enough words, mahal ko. Please always take care and keep moving forward. Mahaba pa ang lalakbayin natin, pero ang layo-layo mo na rin ngayon. I love you so, so much.<br><br>
+                                    <strong>Tomorrow's schedule:</strong><br>
+                                    &bull; Bonchon &mdash; 100 lang gastos mo, mahal, ako na bahala sa iba.<br>
+                                    &bull; Yung flowers hindi dumating, mahal, sa monthsary na lang natin babawi ako, promise.<br>
+                                    &bull; Tapos kain sa Robinsons, laro tayo doon, just us two.<br><br>
+                                    3 PM alis &mdash; 6 PM uwi, hehe.<br><br>
+                                    Thank you for choosing me every day, for your patience, your softness, and your strength. I'll keep choosing you in every season of our lives, mahal ko.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="anniversary-counter">
                     <div class="counter-text">Years of Love & Happiness</div>
@@ -1109,7 +1418,8 @@
                 { type: 'image', src: 'images/PaldoDays/e6404020-4e45-4014-82fe-40a6c533d92c (1).jpg', alt: 'Paldo Days 12' },
                 { type: 'image', src: 'images/PaldoDays/f8eebbb9-e5bf-4620-b931-18f86a16f69f.jpg', alt: 'Paldo Days 13' },
                 { type: 'image', src: 'images/PaldoDays/f8eebbb9-e5bf-4620-b931-18f86a16f69f (1).jpg', alt: 'Paldo Days 14' }
-            ]
+            ],
+            valentines: []
         };
 
         function showFolder(folderId) {
